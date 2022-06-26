@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes');
 const blogApiRoutes = require('./routes/blogApiRoutes')
+const path = require('path');
 
 const app = express();
 app.set('view engine', 'ejs')

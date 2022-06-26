@@ -8,8 +8,8 @@ const app = express();
 app.set('view engine', 'ejs')
 
 // const dbURL = 'mongodb://localhost:27017'
-const dbURL = 'mongodb+srv://root:hello123@cluster0.l0iylyh.mongodb.net/?retryWrites=true&w=majority'
-// mongosh "mongodb+srv://root:hello123@cluster0.l0iylyh.mongodb.net/?retryWrites=true&w=majority"
+// const dbURL = 'mongodb+srv://root:hello123@cluster0.l0iylyh.mongodb.net/?retryWrites=true&w=majority'
+const dbURL = process.env.dbURL;
 mongoose.connect(dbURL)
     .then(() => app.listen(3000))
     .catch(err => console.log(err))

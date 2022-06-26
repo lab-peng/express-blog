@@ -3,19 +3,17 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes');
 const blogApiRoutes = require('./routes/blogApiRoutes')
-const path = require ('path');
 
 const app = express();
 app.set('view engine', 'ejs')
-app.listen(3000)
 
 // const dbURL = 'mongodb://localhost:27017'
-// const dbURL = 'mongodb+srv://root:hello123@cluster0.l0iylyh.mongodb.net/test?retryWrites=true&w=majority'
+const dbURL = 'mongodb+srv://root:hello123@cluster0.l0iylyh.mongodb.net/test?retryWrites=true&w=majority'
 // const dbURL = process.env.dbURL;
 // const dbURL = process.env.MONGODB_URI;
-// mongoose.connect(dbURL)
-//     .then(() => app.listen(3000))
-//     .catch(err => console.log(err))
+mongoose.connect(dbURL)
+    .then(() => app.listen(8000))
+    .catch(err => console.log(err))
 
 // middleware
 // app.use((req, res, next) => {
@@ -26,10 +24,7 @@ app.listen(3000)
 // });
 
 // use imported middleware
-// app.use(express.static('static'))
-app.use(express.static(path.join(__dirname + '/static')))
-app.set('views', path.join(__dirname, '/views'));
-
+app.use(express.static('static'))
 app.use(express.urlencoded({ extended: true }));  // middleware for submit form data
 app.use(morgan('dev'));
 

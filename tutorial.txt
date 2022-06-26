@@ -16,3 +16,8 @@ routes   urls
 models   models
 views    templates
 controllers  views
+
+
+
+mongoose cannot connect to mongoDB Atlas
+https://stackoverflow.com/questions/68875026/error-querysrv-eservfail-mongodb-tcp-cluster0-abcd0-mongodb-net/68903530#68903530

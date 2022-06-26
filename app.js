@@ -8,8 +8,8 @@ const path = require('path');
 const app = express();
 app.set('view engine', 'ejs')
 
-const dbURL = 'mongodb://localhost:27017'  // local mongodb
-// const dbURL = process.env.MONGODB_URI;  // mongoDB atlas
+// const dbURL = 'mongodb://localhost:27017'  // local mongodb
+const dbURL = process.env.MONGODB_URI;  // mongoDB atlas
 mongoose.connect(dbURL)
     .then(() => app.listen(8000))
     .catch(err => console.log(err))

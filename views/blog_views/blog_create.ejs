@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs'); %>
+<body>
+
+    <%- include('./partials/nav.ejs'); %>
+
+    <div class="create-blog">
+        <form action="/blogs" method="post" novalidate>
+            <label for="title">Blog Title: </label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="snippet">Blog Snippet: </label>
+            <input type="text" id="snippet" name="snippet" required>   
+
+            <label for="body">Blog Body: </label>
+            <textarea type="text" id="body" name="body" required></textarea>    
+            
+            <div class="create-blog-bottom">
+                <a class="cancel-button" href="/blogs">Cancel</a>
+                <button class="submit-button">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs'); %>
+    
+</body>
+</html>

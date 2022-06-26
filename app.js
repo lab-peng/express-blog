@@ -24,7 +24,9 @@ mongoose.connect(dbURL)
 // });
 
 // use imported middleware
-app.use(express.static('static'))
+app.use(express.static(path.join(__dirname + '/static')))
+app.set('views', path.join(__dirname, '/views'));
+
 app.use(express.urlencoded({ extended: true }));  // middleware for submit form data
 app.use(morgan('dev'));
 

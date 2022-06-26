@@ -10,7 +10,7 @@ app.set('view engine', 'ejs')
 // const dbURL = 'mongodb://localhost:27017'
 // const dbURL = 'mongodb+srv://vercel-admin-user:hello123@cluster0.l0iylyh.mongodb.net/?retryWrites=true&w=majority'
 // const dbURL = process.env.dbURL;
-const dbURL = MONGODB_URI;
+const dbURL = process.env.MONGODB_URI;
 mongoose.connect(dbURL)
     .then(() => app.listen(3000))
     .catch(err => console.log(err))

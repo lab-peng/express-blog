@@ -52,3 +52,7 @@ app.use((req, res) => {
         <a href="/blogs" style="text-decoration: none; color: #04AA6D!important;">Back Home</a>
         </h3>`)
 })
+
+
+// For Vercel Deployment
+module.exports = app;

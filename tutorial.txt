@@ -9,7 +9,8 @@ $ npm install morgan
 install ORM for mongoDB (mongoose)  ODM(Object Document Mapper) basically its the same as ORM for RDBMS
 $ npm install mongoose
 
-
+install .env
+npm install dotenv
 
 express  django
 routes   urls
